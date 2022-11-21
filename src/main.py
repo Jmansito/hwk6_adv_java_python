@@ -2,17 +2,9 @@ from src.student import Student, UnderGrad, Graduate
 from src.university import University
 
 if __name__ == "__main__":
-    students = []
-
-    students.append(UnderGrad("John", "jown@ucdenver.edu", 2.0))
-
-    students.append(UnderGrad("Alice", "alice@ucdenver.edu", 2.0))
-
-    students.append(UnderGrad("Norman", "alice@ucdenver.edu", 2.0))
-
-    students.append(Graduate("Elise", "elise@ucdenver.edu", "master"))
-
-    students.append(Graduate("Laura", "elice@ucdenver.edu", "phd"))
+    students = [UnderGrad("John", "jown@ucdenver.edu", 2.0), UnderGrad("Alice", "alice@ucdenver.edu", 2.0),
+                UnderGrad("Norman", "alice@ucdenver.edu", 2.0), Graduate("Elise", "elise@ucdenver.edu", "master"),
+                Graduate("Laura", "elice@ucdenver.edu", "phd")]
 
     for u in students:
         print(u)
