@@ -94,10 +94,10 @@ class Graduate(Student):
         self.current_level = current_level
 
     def get_standing(self):
-        if self.current_level.lower() != "master" and self.current_level.lower() != "phd":
+        if self.current_level != "master" and self.current_level != "phd":
             raise ValueError('Invalid level')
-        elif self.current_level.lower() == "master":
+        elif self.current_level == "master":
             return "Master"
-        elif self.current_level.lower() == "phd":
+        elif self.current_level == "phd":
             return "PhD"
 
