@@ -34,8 +34,7 @@ class Student(ABC):
     def email(self):
         return self._email
 
-    # Get the standing of the student, abstractmethod assignment not working
-    # @abc.abstractmethod
+    # Get the standing of the student
     def get_standing(self):
         pass
 
@@ -69,17 +68,11 @@ class UnderGrad(Student):
             raise ValueError('Invalid gpa')
         else:
             self._gpa = gpa
-        # self._gpa = gpa
         self._standing = "Undergraduate"
 
     def get_standing(self):
         self._standing = "Undergraduate"
         return self._standing
-
-    # # Following the book here
-    # @get_standing.setter
-    # def get_standing(self, standing):
-    #     self._standing = "Undergraduate"
 
     @property
     def gpa(self):
@@ -98,22 +91,13 @@ class Graduate(Student):
 
     def __init__(self, name: str, email: str, current_level: str):
         super().__init__(name, email)
-        # self._standing = current_level
-        if current_level.lower() != "master" and current_level.lower() != "phd":
-            raise ValueError('Invalid level')
-        elif current_level.lower() == "master":
-            self.current_level = "Master"
-        elif current_level.lower() == "phd":
-            self.current_level = "PhD"
+        self.current_level = current_level
 
     def get_standing(self):
-        return self.current_level
-
-    # # Following the book here
-    # @get_standing.setter
-    # def get_standing(self, standing):
-    #     if standing.lower() == "master":
-    #         self._standing = "Master"
-    #     if standing.lower() == "phd":
-    #         self._standing = "PhD"
+        if self.current_level.lower() != "master" and self.current_level.lower() != "phd":
+            raise ValueError('Invalid level')
+        elif self.current_level.lower() == "master":
+            return "Master"
+        elif self.current_level.lower() == "phd":
+            return "PhD"
 
