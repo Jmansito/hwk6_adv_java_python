@@ -1,5 +1,4 @@
-from src.student import Student, UnderGrad, Graduate
-from src.university import University
+from student import UnderGrad, Graduate
 
 if __name__ == "__main__":
     students = [UnderGrad("John", "jown@ucdenver.edu", 2.0), UnderGrad("Alice", "alice@ucdenver.edu", 2.0),

@@ -1,7 +1,6 @@
 from re import search
-
-from src.course import Course
-from src.student import UnderGrad, Graduate
+from course import Course
+from student import UnderGrad, Graduate
 
 
 class University:
