@@ -34,23 +34,20 @@ class Student(ABC):
     def email(self):
         return self._email
 
+    @property
+    def enrolled_to(self):
+        return [self._enrolled_to]
+
     # Get the standing of the student
     def get_standing(self):
         pass
 
-    @property
-    def enroll_to(self):
-        return [self._enrolled_to]
-
-    # Enroll to course from Course class
-    @enroll_to.setter
     def enroll_to(self, course):
         self._enrolled_to.append(course)
 
     @staticmethod
     def reset_id_numbering():
         Student.id_counter = 0o00001
-        # self._id = 0o00001
 
     def __str__(self):
         # Return string for Student
